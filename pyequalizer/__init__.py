@@ -1,1 +1,3 @@
-from .core import *
+__all__ = ['Filter', 'utils']
+from . import Filter
+from . import utils

@@ -1,51 +1,17 @@
-📦 setup.py (for humans)
+pyequalizer
 =======================
 
-This repo exists to provide [an example setup.py] file, that can be used
-to bootstrap your next Python project. It includes some advanced
-patterns and best practices for `setup.py`, as well as some
-commented–out nice–to–haves.
-
-For example, this `setup.py` provides a `$ python setup.py upload`
-command, which creates a *universal wheel* (and *sdist*) and uploads
-your package to [PyPi] using [Twine], without the need for an annoying
-`setup.cfg` file. It also creates/uploads a new git tag, automatically.
-
-In short, `setup.py` files can be daunting to approach, when first
-starting out — even Guido has been heard saying, "everyone cargo cults
-thems". It's true — so, I want this repo to be the best place to
-copy–paste from :)
-
-[Check out the example!][an example setup.py]
-
-Installation
------
-
-```bash
-cd your_project
-
-# Download the setup.py file:
-#  download with wget
-wget https://raw.githubusercontent.com/navdeep-G/setup.py/master/setup.py -O setup.py
-
-#  download with curl
-curl -O https://raw.githubusercontent.com/navdeep-G/setup.py/master/setup.py
+This repo is a python equalizer which is implemented by scipy.
+And, the following function is the main one you will use in this package. 
 ```
-
-To Do
------
-
--   Tests via `$ setup.py test` (if it's concise).
-
-Pull requests are encouraged!
-
-More Resources
---------------
-
--   [What is setup.py?] on Stack Overflow
--   [Official Python Packaging User Guide](https://packaging.python.org)
--   [The Hitchhiker's Guide to Packaging]
--   [Cookiecutter template for a Python package]
+y, sr = librosa.load(input_file, sr=44100)
+y = equalizer(y, sr, start_iv=200, end_iv=8000, num_iv=100, peak_scale=20, peak_iv = 20, type=type_f)
+```
+where **start_iv, end_iv** is the frequencys equalizer starts to work and ends;
+**num_iv** is the number how many interval will be in. Generally, it means how smooth the equalize curve is.
+**peak_scale** is how much will the signal be enhanced.
+**peak_iv** is the interval where the peak of equalizing curve is
+**type** means the equalizing curve shape. We currently provide "parabola" and "linear".
 
 License
 -------
@@ -56,10 +22,3 @@ Anyone is free to copy, modify, publish, use, compile, sell, or
 distribute this software, either in source code form or as a compiled
 binary, for any purpose, commercial or non-commercial, and by any means.
 
-  [an example setup.py]: https://github.com/navdeep-G/setup.py/blob/master/setup.py
-  [PyPi]: https://docs.python.org/3/distutils/packageindex.html
-  [Twine]: https://pypi.python.org/pypi/twine
-  [image]: https://farm1.staticflickr.com/628/33173824932_58add34581_k_d.jpg
-  [What is setup.py?]: https://stackoverflow.com/questions/1471994/what-is-setup-py
-  [The Hitchhiker's Guide to Packaging]: https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html
-  [Cookiecutter template for a Python package]: https://github.com/audreyr/cookiecutter-pypackage

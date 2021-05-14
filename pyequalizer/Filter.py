@@ -41,7 +41,7 @@ def _equalizer(data, sr, interval, scales, step=3):
         sum_y += band_filter(data, sr, interval[i], interval[i+1], step = step)*scales[i+1]
 
     return sum_y
-@timing
+# @timing
 def equalizer(data, sr, start_iv, end_iv, num_iv, peak_scale, peak_iv, type, step=3):
     '''
 
@@ -57,8 +57,6 @@ def equalizer(data, sr, start_iv, end_iv, num_iv, peak_scale, peak_iv, type, ste
     :return: nparray
     '''
     interval, scales = smooth_interval_scale(start_iv, end_iv, num_iv, peak_scale, peak_iv, type)
-    print(interval)
-    print(scales)
     data = _equalizer(data, sr, interval, scales, step=step)
 
     return data
