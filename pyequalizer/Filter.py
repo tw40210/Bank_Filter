@@ -1,7 +1,7 @@
 import scipy
 from scipy import signal
 import numpy as np
-from utils import smooth_interval_scale, curve_maker, curve_calcu, timing
+from pyequalizer.utils import smooth_interval_scale, curve_maker, curve_calcu, timing
 
 def band_filter(data, sr, min_frq, max_frq, step=3):
     Wn1 = 2*min_frq/sr
