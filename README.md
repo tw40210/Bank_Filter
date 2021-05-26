@@ -25,7 +25,7 @@ where **start_iv, end_iv** is the frequencys equalizer starts to work and ends;
 ##Demo
 By the mentioned code, we enhance the frequency between 200-8000. In the following figure, it looks like we supress other bands because of librosa spectrum display function.
 
-<img src="demo_result.png" width="100%">
+![image](https://github.com/tw40210/Bank_Filter/blob/main/demo_result.PNG)
 Top one is the original spectrum and bottom one is processed spectrum.
 
 
