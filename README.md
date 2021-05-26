@@ -9,7 +9,8 @@ You can install this package by pip directly.
 ```
 pip install pyequalizer
 ```
-
+Use
+-------
 And, the following code is the main one you will use in this package. 
 ```
 import pyequalizer.Filter as Filter
