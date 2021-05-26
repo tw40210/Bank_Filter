@@ -2,7 +2,9 @@ pyequalizer
 =======================
 
 This repo is a python equalizer which is implemented by scipy.
-##Install
+
+Install
+-------
 You can install this package by pip directly.
 ```
 pip install pyequalizer
@@ -22,7 +24,8 @@ where **start_iv, end_iv** is the frequencys equalizer starts to work and ends;
 **peak_iv** is the interval where the peak of equalizing curve is
 **type** means the equalizing curve shape. We currently provide "parabola" and "linear".
 
-##Demo
+Demo
+-------
 By the mentioned code, we enhance the frequency between 200-8000. In the following figure, it looks like we supress other bands because of librosa spectrum display function.
 
 ![image](https://github.com/tw40210/Bank_Filter/blob/main/demo_result.PNG)
